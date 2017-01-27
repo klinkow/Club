@@ -1,0 +1,37 @@
+{ "guests": [{
+    "name": "Jeff",
+    "friends": 0,
+    "vip": false,
+    "inside": false
+    }, {
+    "name": "Bob",
+    "friends": 1,
+    "vip": false,
+    "inside": false
+    }, {
+    "name": "Jennifer",
+    "friends": 2,
+    "vip": false,
+    "inside": false
+    }, {
+    "name": "Cecilia",
+    "friends": 3,
+    "vip": false,
+    "inside": false
+    }, {
+    "name": "Adam",
+    "friends": 2,
+    "vip": true,
+    "inside": false
+    }, {
+    "name": "Roselin",
+    "friends": 0,
+    "vip": true,
+    "inside": true
+    }, {
+    "name": "Bronwin",
+    "friends": 1,
+    "vip": false,
+    "inside": true
+  }]
+}
