@@ -1,4 +1,4 @@
-<ul *ngFor="let guest of guests">
+<ul *ngFor="let guest of guests | async">
   <li>
     <h2>{{guest.name}}</h2>
     <!-- <p>+{{guest.friends}} <span class="red" *ngIf="vipCheck(guest)"{{guest.vip}}</span></p> -->
