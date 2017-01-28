@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Guest } from '../../../src/app/guest.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { GuestService } from './../guest.service';
+import { routing } from '../app-routing';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'list',
@@ -11,15 +13,16 @@ import { GuestService } from './../guest.service';
 })
 
 export class ListComponent implements OnInit {
-  albums: FirebaseListObservable<any[]>;
+  guests: FirebaseListObservable<any[]>;
 
-  constructor(private router: Router, private guestService: GuestService) {}
+  constructor(private router: Router, private guestService: GuestService){}
 
-  vipCheck(guest) {
-
-  }
+  // constructor(private angularFire: AngularFire) {
+  //   this.guests = angularFire.database.list('guests');
+  // }
 
   ngOnInit() {
+    this.guests = this.guestService.getGuests();
   }
 
 }

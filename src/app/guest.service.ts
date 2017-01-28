@@ -8,7 +8,7 @@ export class GuestService {
   guests: FirebaseListObservable<any[]>;
 
   constructor(private angularFire: AngularFire) {
-  this.guests = angularFire.database.list('guests');
+    this.guests = angularFire.database.list('guests');
   }
 
   getGuests() {

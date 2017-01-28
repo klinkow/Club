@@ -6,7 +6,8 @@ import { masterFirebaseConfig } from './api-keys';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { ListComponent } from './list/list.component';
-import { routing } from './app.routing';
+import { routing } from './app-routing';
+import { AboutComponent } from './about/about.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -18,7 +19,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent
+    ListComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

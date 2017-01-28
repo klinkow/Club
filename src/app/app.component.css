@@ -1,0 +1,24 @@
+ul {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  font-size: 200%;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: yellow;
+  transition: color 0.5s, transform 1s;
+}
+
+.float-right {
+  float: right;
+}
