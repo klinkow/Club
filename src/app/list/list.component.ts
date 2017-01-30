@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 
 export class ListComponent implements OnInit {
   guests: FirebaseListObservable<any[]>;
+  filterType : string;
 
   constructor(private router: Router, private guestService: GuestService){}
 
@@ -23,6 +24,15 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.guests = this.guestService.getGuests();
+  }
+
+// change to write to firebase:
+  toggleInside(guest: Guest) {
+    guest.inside != guest.inside;
+  }
+
+  pipeSelected(filter) {
+    this.filterType = filter;
   }
 
 }

@@ -1,6 +1,16 @@
-<ul *ngFor="let guest of guests | async">
+<select (change)="pipeSelected($event.target.value)">
+  <option value="allGuests">All guests</option>
+  <option value="vips">Just Vip's</option>
+  <option value="notEntered" select="selected">Guests who haven't entered yet</option>
+</select>
+
+<ul *ngFor="let guest of guests | async | filter:filterType">
   <li>
-    <h2>{{guest.name}}</h2>
+    <h2>
+      {{guest.name}}
+      <input *ngIf="guest.inside" type="checkbox" checked (click)="toggleInside(guest)"/>
+      <input *ngIf="guest.inside === false" type="checkbox" (click)="toggleInside(guest)"/>
+    </h2>
     <p>+{{guest.friends}} <span class="red" *ngIf="guest.vip">VIP</span></p>
   </li>
 </ul>

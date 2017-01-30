@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { ListComponent } from './list/list.component';
 import { routing } from './app-routing';
 import { AboutComponent } from './about/about.component';
+import { FilterPipe } from './filter.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -20,7 +21,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     ListComponent,
-    AboutComponent
+    AboutComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
