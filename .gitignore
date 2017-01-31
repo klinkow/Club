@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+#Firebase credentials: choosing not to ignore
+
 # compiled output
 /dist
 /tmp
@@ -38,6 +40,3 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
-
-#Firebase credentials
-/src/app/api-keys.ts 

@@ -1,16 +1,31 @@
+<label>Filter Guests:</label>
 <select (change)="pipeSelected($event.target.value)">
   <option value="allGuests">All guests</option>
   <option value="vips">Just Vip's</option>
-  <option value="notEntered" select="selected">Guests who haven't entered yet</option>
 </select>
+<br>
+<br>
+<label>New Guest:</label>
+<br>
+<input #newName><br>
+<label>Number of Friends</label><br>
+<input #newFriends><br>
+<label>VIP?</label><br>
+<input type="checkbox" #newVip><br>
+<button (click)="submitForm(newName.value, newFriends.value, newVip.value); newName.value=''; newFriends.value=''; newVip.value=''">Add</button>
 
+<br><br>
 <ul *ngFor="let guest of guests | async | filter:filterType">
   <li>
     <h2>
-      {{guest.name}}
-      <input *ngIf="guest.inside" type="checkbox" checked (click)="toggleInside(guest)"/>
-      <input *ngIf="guest.inside === false" type="checkbox" (click)="toggleInside(guest)"/>
+      <div (click)="goToDetailPage(guest)">
+        {{guest.name}}
+      </div>
+      <button (click)="toggleEdit()">Edit</button>
     </h2>
+    <div *ngIf="displayEdit">
+      <app-edit-guest [selectedGuest]="guest"></app-edit-guest>
+    </div>
     <p>+{{guest.friends}} <span class="red" *ngIf="guest.vip">VIP</span></p>
   </li>
 </ul>

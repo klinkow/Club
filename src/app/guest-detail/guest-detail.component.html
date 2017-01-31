@@ -1,0 +1,8 @@
+<div>
+  <label>Guest name:</label>
+  <h3>{{(guestToDisplay | async)?.name}}</h3>
+  <label>Number of friends:</label>
+  <h4>{{(guestToDisplay | async)?.friends}}</h4>
+  <label>VIP?</label>
+  <p>{{(guestToDisplay | async)?.vip}}</p>
+</div>

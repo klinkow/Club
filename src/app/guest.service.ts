@@ -15,4 +15,24 @@ export class GuestService {
     return this.guests;
   }
 
+  addGuest(newGuest: Guest) {
+    this.guests.push(newGuest);
+  }
+
+  getGuestById(guestId: string){
+    return this.angularFire.database.object('guests/' + guestId);
+  }
+
+  updateGuest(localUpdatedGuest){
+  var guestEntryInFirebase = this.getGuestById(localUpdatedGuest.$key);
+  guestEntryInFirebase.update({name: localUpdatedGuest.name,
+                              friends: localUpdatedGuest.friends,
+                              vip: localUpdatedGuest.vip});
+  }
+
+  deleteGuest(localGuestToDelete){
+    var guestEntryInFirebase = this.getGuestById(localGuestToDelete.$key);
+    guestEntryInFirebase.remove();
+  }
+
 }

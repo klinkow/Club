@@ -14,7 +14,9 @@ import { Router } from '@angular/router';
 
 export class ListComponent implements OnInit {
   guests: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
   filterType : string;
+  displayEdit : boolean = false;
 
   constructor(private router: Router, private guestService: GuestService){}
 
@@ -26,13 +28,26 @@ export class ListComponent implements OnInit {
     this.guests = this.guestService.getGuests();
   }
 
-// change to write to firebase:
-  toggleInside(guest: Guest) {
-    guest.inside != guest.inside;
-  }
-
   pipeSelected(filter) {
     this.filterType = filter;
+  }
+
+  toggleEdit() {
+    if (this.displayEdit === false) {
+      this.displayEdit = true;
+    } else {
+      this.displayEdit = false;
+    }
+  }
+
+  goToDetailPage(clickedGuest) {
+    this.router.navigate(['guests', clickedGuest.$key]);
+  };
+
+  submitForm(name: string, friends: number, vip: boolean) {
+    var inside : boolean = false;
+    var newGuest: Guest = new Guest(name, friends, vip, inside);
+    this.guestService.addGuest(newGuest);
   }
 
 }

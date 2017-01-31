@@ -9,6 +9,8 @@ import { ListComponent } from './list/list.component';
 import { routing } from './app-routing';
 import { AboutComponent } from './about/about.component';
 import { FilterPipe } from './filter.pipe';
+import { GuestDetailComponent } from './guest-detail/guest-detail.component';
+import { EditGuestComponent } from './edit-guest/edit-guest.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +24,9 @@ export const firebaseConfig = {
     AppComponent,
     ListComponent,
     AboutComponent,
-    FilterPipe
+    FilterPipe,
+    GuestDetailComponent,
+    EditGuestComponent
   ],
   imports: [
     BrowserModule,

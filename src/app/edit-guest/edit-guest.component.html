@@ -1,0 +1,16 @@
+<h4>Edit Guest</h4>
+
+<label>New Guest Name:</label>
+<input [(ngModel)]="selectedGuest.name">
+<br>
+
+<label>Number of +1's:</label>
+<input [(ngModel)]="selectedGuest.friends">
+<br>
+
+<label>Vip?</label>
+<input type="checkbox" [(ngModel)]="selectedGuest.vip">
+
+
+<button (click)="beginUpdatingGuest(selectedGuest)">Update</button>
+<button (click)="beginDeletingGuest(selectedGuest)">Delete</button>
